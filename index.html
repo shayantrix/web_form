@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVE Lookup Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CVE Lookup Tool</h1>
+            <p>Search for vulnerabilities related to your service or system</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <form id="cveSearchForm">
+                    <div class="input-group">
+                        <input type="text" id="serviceInput" placeholder="e.g., Apache 2.4, OpenSSL 1.1.1" required>
+                        <button type="submit">Search</button>
+                    </div>
+                    <div class="examples">
+                        <small>Examples: WordPress 5.0, Linux Kernel 4.15, Nginx 1.18</small>
+                    </div>
+                </form>
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <div class="initial-state">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3214/3214925.png" alt="Search icon" class="search-icon">
+                    <p>Enter a service or system name to find related CVEs</p>
+                </div>
+                <div class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Searching for CVEs...</p>
+                </div>
+                <div class="results hidden" id="resultsList"></div>
+                <div class="error-state hidden" id="errorMessage"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>CVE data provided by your service | © 2023</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
